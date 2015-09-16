@@ -1,0 +1,14 @@
+>>> add.__code__.co_code
+'d\x01\x00}\x00\x00d\x02\x00}\x01\x00|\x00\x00|\x01\x00\x17S'
+'d\x01\x00}\x00\x00d\x02\x00}\x01\x00|\x00\x00|\x01\x00\x18S'
+
+2           0 LOAD_CONST               1 (1)
+              3 STORE_FAST               0 (a)
+
+  3           6 LOAD_CONST               2 (2)
+              9 STORE_FAST               1 (b)
+
+  4          12 LOAD_FAST                0 (a)
+             15 LOAD_FAST                1 (b)
+             18 BINARY_ADD          
+             19 RETURN_VALUE  

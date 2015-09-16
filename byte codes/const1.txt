@@ -1,0 +1,18 @@
+>>> def one():
+...     print 1
+... 
+>>> dis.dis(one)
+  2           0 LOAD_CONST               1 (1)
+              3 PRINT_ITEM          
+              4 PRINT_NEWLINE       
+              5 LOAD_CONST               0 (None)
+              8 RETURN_VALUE        
+>>> one.__code__.co_code
+'d\x01\x00GHd\x00\x00S'
+>>> print(for[(ord)x in one.__code__.co_code]) 
+  File "<stdin>", line 1
+    print(for[(ord)x in one.__code__.co_code]) 
+            ^
+SyntaxError: invalid syntax
+>>> print[ord (x) for x in one.__code__.co_code]
+[100, 1, 0, 71, 72, 100, 0, 0, 83]

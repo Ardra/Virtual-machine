@@ -1,0 +1,23 @@
+>>> def add():
+...     a=1
+...     b=2
+...     return a+b
+... 
+>>> 
+>>> import dis
+>>> dis.dis(add)
+  2           0 LOAD_CONST               1 (1)
+              3 STORE_FAST               0 (a)
+
+  3           6 LOAD_CONST               2 (2)
+              9 STORE_FAST               1 (b)
+
+  4          12 LOAD_FAST                0 (a)
+             15 LOAD_FAST                1 (b)
+             18 BINARY_ADD          
+             19 RETURN_VALUE        
+>>> add.__code__.co_code
+'d\x01\x00}\x00\x00d\x02\x00}\x01\x00|\x00\x00|\x01\x00\x17S'
+
+>>> print[ord (x) for x in add.__code__.co_code]
+[100, 1, 0, 125, 0, 0, 100, 2, 0, 125, 1, 0, 124, 0, 0, 124, 1, 0, 23, 83]

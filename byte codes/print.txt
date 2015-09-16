@@ -1,0 +1,14 @@
+>>> def hello():
+...     print(hello)
+... 
+>>> import dis 
+>>> dis.dis(hello)
+  2           0 LOAD_GLOBAL              0 (hello)
+              3 PRINT_ITEM          
+              4 PRINT_NEWLINE       
+              5 LOAD_CONST               0 (None)
+              8 RETURN_VALUE        
+>>> hello.__code__.co_code
+'t\x00\x00GHd\x00\x00S'
+>>> print[ord (x) for x in hello.__code__.co_code]
+[116, 0, 0, 71, 72, 100, 0, 0, 83]

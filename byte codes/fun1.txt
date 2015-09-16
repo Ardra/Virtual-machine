@@ -1,0 +1,13 @@
+>>> def fun1():
+...     a=1
+... 
+>>> import dis 
+>>> dis.dis(fun1)
+  2           0 LOAD_CONST               1 (1)
+              3 STORE_FAST               0 (a)
+              6 LOAD_CONST               0 (None)
+              9 RETURN_VALUE        
+>>> fun1.__code__.co_code
+'d\x01\x00}\x00\x00d\x00\x00S'
+>>> print[ord (x) for x in fun1.__code__.co_code]
+[100, 1, 0, 125, 0, 0, 100, 0, 0, 83]

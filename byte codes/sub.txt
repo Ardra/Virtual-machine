@@ -1,0 +1,16 @@
+>>> dis.dis(sub)
+  2           0 LOAD_CONST               1 (2)
+              3 STORE_FAST               0 (a)
+
+  3           6 LOAD_CONST               2 (1)
+              9 STORE_FAST               1 (b)
+
+  4          12 LOAD_FAST                0 (a)
+             15 LOAD_FAST                1 (b)
+             18 BINARY_SUBTRACT     
+             19 RETURN_VALUE    
+>>> 
+>>> sub.__code__.co_code
+'d\x01\x00}\x00\x00d\x02\x00}\x01\x00|\x00\x00|\x01\x00\x18S'
+>>> print[ord (x) for x in sub.__code__.co_code]
+[100, 1, 0, 125, 0, 0, 100, 2, 0, 125, 1, 0, 124, 0, 0, 124, 1, 0, 24, 83]
