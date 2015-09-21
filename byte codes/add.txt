@@ -21,3 +21,21 @@
 
 >>> print[ord (x) for x in add.__code__.co_code]
 [100, 1, 0, 125, 0, 0, 100, 2, 0, 125, 1, 0, 124, 0, 0, 124, 1, 0, 23, 83]
+
+
+
+
+>>> def add2():
+...     print 5+7
+... 
+>>> import dis
+>>> dis.dis(add2)
+  2           0 LOAD_CONST               3 (12)
+              3 PRINT_ITEM          
+              4 PRINT_NEWLINE       
+              5 LOAD_CONST               0 (None)
+              8 RETURN_VALUE  
+
+>>> print[ord (x) for x in add2.__code__.co_code]
+[100, 3, 0, 71, 72, 100, 0, 0, 83]
+
